@@ -1,5 +1,27 @@
 .App {
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #848da0;
+}
+.resume{
+  
+  align-items: center;
+  margin: 10px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+.resumepaper{
+  
+  align-items: center;
+  padding: 10px;
+  background-color: antiquewhite;
+  
+}
+p
+{
+    font-size: 17px;
+    color: #120c4e;
 }
 
 .App-logo {
