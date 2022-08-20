@@ -61,7 +61,7 @@ const Contact = () => {
           <Col>
          
             <div  className="containersc">
-              <p className="">Schedule a consolation and let's figure out a one time fee to get you up and running on the web. </p>
+              <p className="">Schedule a consolation to figure out a one time fee to get your idea on the web. </p>
               <p >
                 <i class="bi bi-envelope-fill">kennethpsinclair@yahoo.com</i>
               </p>

@@ -4,9 +4,9 @@ const Resume = () => (
     <div className="resume">
         <section className="resumepaper">
         <section>
-            <h1>
+            <h2>
                 Kenneth Preston Sinclair
-            </h1>
+            </h2>
             <p>
                 I am a Full-stack web developer using Reactjs for modern, mobile responsive, static websites.<br />
                 I use the MERN stack, with  JAM stack principles.
@@ -37,15 +37,15 @@ const Resume = () => (
         </section>
         <section>
             Portfolio Links:<br/><br/><ul>
-            <li><a target="blank" href= ' https://blissful-knuth-d7ec88.netlify.app/'>KOHILO WIND</a><br/></li>
+        
 
             <li> <a  target="blank" href='https://www.recipelab.fun/login'>RECIPE LAB</a><br/></li>
 
             <li> <a target="blank" href=  'https://hatchetpress.net/#/'>HATCHET PRESS</a><br/></li>
 
-            <li><a target="blank" href= ' https://blissful-knuth-d7ec88.netlify.app/'>KOHILO WIND</a><br/></li>
+        
 
-            <li><a target="blank" href= ' https://peaceful-carson-4994a2.netlify.app/'>SCRATCH FARMHOUSE CATERING</a><br/></li>
+            
             </ul>
         </section>
         </section>
