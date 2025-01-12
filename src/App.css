@@ -4,6 +4,118 @@
   align-items: center;
   background-color: #848da0;
 }
+.SiteTitle{
+  font-size: 3.5rem;
+  font-family: Felix Tilting;
+}
+.wrapper{
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  position: relative;
+}
+.wrapper .box {
+  font-weight: 800;
+  font-size: large;
+  color: rgb(192, 110, 4);
+
+}
+.wrapper .box:hover{
+  color: rgb(230, 186, 130);
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 10px 5px black;
+}
+.wrapper > a {
+  font-weight: 800;
+  font-size: large;
+  color: rgb(192, 110, 4);
+
+}
+.wrapper .box:hover{
+  color: rgb(230, 186, 130);
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 10px 5px black;
+}
+.wrapper a:hover{
+  color: rgb(230, 186, 130);
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 10px 5px black;
+}
+/** website previews **/
+
+.effect{
+  width: 30rem;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 5px 20px black;
+  top: 0;
+ 
+  transform: translate(-5%) scale(.2);
+  opacity: 0;
+}
+.wrapper .box:hover ~ .effect{
+  left: 0;
+  transform: translate(0%,19%) scale(.75);
+  opacity: 1;
+  border-radius: .5rem;
+}
+
+.effect2{
+  width: 30rem;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 5px 20px black;
+  top: 0;
+ 
+  transform: translate(-5%) scale(.2);
+  opacity: 0;
+}
+.wrapper .box2:hover ~ .effect2{
+  
+  transform: translate(-55%,22%) scale(.75);
+  opacity: 1;
+  border-radius: .5rem;
+}
+.effect3{
+  width: 30rem;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 5px 20px black;
+  top: 0;
+ 
+  transform: translate(-5%) scale(.2);
+  opacity: 0;
+}
+.wrapper .box3:hover ~ .effect3{
+ 
+  transform: translate(11%,22%) scale(.75);
+  opacity: 1;
+  border-radius: .5rem;
+}
+.effect4{
+  width: 30rem;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 5px 20px black;
+  top: 0;
+ 
+  transform: translate(-5%) scale(.2);
+  opacity: 0;
+}
+.wrapper .box4:hover ~ .effect4{
+  right: 0;
+  transform: translate(9%,19%) scale(.75);
+  opacity: 1;
+  border-radius: .5rem;
+}
 .resume{
   
   align-items: center;
