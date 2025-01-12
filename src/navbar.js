@@ -9,14 +9,14 @@ const Bar = () => {
       <nav >
 <Navbar className="nav1" collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand as={Link} to={"./"}>Kenneth Sinclair</Navbar.Brand>
+  <Navbar.Brand as={Link} to={"./"}><h1 className="SiteTitle">Hatchet Tech</h1></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
       <Nav.Link as={Link} to={"./resume"}>Resume</Nav.Link>
     
     </Nav>
-    HATCHET TECH
+    
     <Nav>
     <NavDropdown title="Portfolio" id="collasible-nav-dropdown">
     
