@@ -166,8 +166,13 @@
   background-color: antiquewhite;
   
 }
-
+.tech{
+  height: 5rem;
+  width: 5rem;
+}
 .websitepagetop{
+  font-size: 1.3rem;
+  
   font-family: Felix Tilting;
   padding: 1rem;
 }
