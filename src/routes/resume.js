@@ -41,7 +41,9 @@ const Resume = () => (
 
             <li> <a  target="blank" href='https://www.recipelab.fun/login'>RECIPE LAB</a><br/></li>
 
-            <li> <a target="blank" href=  'https://hatchetpress.net/#/'>HATCHET PRESS</a><br/></li>
+            <li> <a target="blank" href=  'https://hatchetpress.net/'>HATCHET PRESS</a><br/></li>
+            <li> <a target="blank" href=  'https://Warthog.Network'>WARTHOG NETWORK</a><br/></li>
+            <li> <a target="blank" href=  'https://jodygrenier.art/'>JODY GRENIER PHOTOGRAPHY</a><br/></li>
 
         
 

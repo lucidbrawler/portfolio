@@ -13,13 +13,13 @@ const Bar = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link as={Link} to={"./resume"}>Resume</Nav.Link>
+     
     
     </Nav>
     
     <Nav>
     <NavDropdown title="Portfolio" id="collasible-nav-dropdown">
-    
+    <NavDropdown.Item as={Link} to={"./resume"}>Resume</NavDropdown.Item>
     <NavDropdown.Item as={Link} to={"./websites"}>websites</NavDropdown.Item>
     <NavDropdown.Item href='https://github.com/lucidbrawler' target="_blank" rel="noopener noreferrer">Git Hub</NavDropdown.Item>
    
