@@ -8,6 +8,7 @@
   padding: 1rem;
 }
  .App > p{
+  font-weight: 900;
   font-family: Felix Tilting;
   font-size: 1.5rem;
   padding-top: 2rem;
@@ -49,13 +50,7 @@
   padding-bottom: 5rem;
   position: relative;
 }
-.wrapper .box {
-  text-shadow: 0 5px 5px black;
-  font-weight: 800;
-  
-  color: rgb(192, 110, 4);
 
-}
 .wrapper .box:hover{
   color: rgb(230, 186, 130);
   position: relative;
@@ -63,10 +58,10 @@
   text-shadow: 0 10px 5px black;
 }
 .wrapper > a {
-  text-shadow: 0 5px 5px black;
+  text-shadow: 0 10px 15px black;
   font-weight: 800;
-  font-size: 1.5rem;
-  color: rgb(192, 110, 4);
+  font-size: 1.7rem;
+  color: rgb(28, 20, 70);
 
 }
 .wrapper .box:hover{

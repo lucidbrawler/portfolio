@@ -14,7 +14,7 @@ const Landing = () => (
                     height: '800px'}}
                     url="https://calendly.com/hatchetpressmail/web-services-consultation" />
     </div>
-    <h1>Your custom built website is waiting for you!</h1>
+    <h1>Your custom website is waiting for you!</h1>
     </div>
 );
     export default Landing;
