@@ -141,6 +141,38 @@ main {
   padding: 3.5rem 0 2.5rem;
 }
 
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 2rem 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-copy {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+
+.hero-photo {
+  flex: 0 0 auto;
+  width: min(200px, 42vw);
+  margin-left: auto;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 3px solid rgba(45, 212, 191, 0.45);
+  box-shadow:
+    0 0 0 6px rgba(45, 212, 191, 0.1),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+  background: var(--bg-elevated);
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -578,6 +610,30 @@ h1 {
   background: var(--card);
 }
 
+.about-with-photo {
+  display: flex;
+  gap: 1.25rem 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  flex: 0 0 auto;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid rgba(45, 212, 191, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  background: var(--bg-elevated);
+}
+
+.about-text {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
 .about-card p {
   margin: 0 0 0.9rem;
   color: var(--muted);
@@ -744,6 +800,17 @@ h1 {
 
   .hero {
     padding-top: 2.25rem;
+  }
+
+  .hero-layout {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-photo {
+    width: 132px;
+    margin-left: 0;
   }
 
   .hero-actions {

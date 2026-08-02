@@ -22,30 +22,44 @@ import "../styles/global.css";
 
   <main id="top">
     <section class="hero">
-      <p class="eyebrow">Hatchet Tech · available for hire</p>
-      <h1>Kenneth Preston Sinclair</h1>
-      <p class="role">Websites · Online stores · Crypto apps · Computer repair</p>
-      <p class="lede">
-        I build websites and online stores that look good on phones, help with crypto apps and wallets,
-        and fix computers when they slow down, crash, or won’t start — for people and small businesses.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:kennethpsinclair@yahoo.com?subject=Service%20inquiry">
-          kennethpsinclair@yahoo.com
-        </a>
-        <a class="btn btn-ghost" href="tel:+13157305708">
-          (315) 730-5708
-        </a>
-        <a class="btn btn-ghost" href="#services">
-          See all services →
-        </a>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Hatchet Tech · available for hire</p>
+          <h1>Kenneth Preston Sinclair</h1>
+          <p class="role">Websites · Online stores · Crypto apps · Computer repair</p>
+          <p class="lede">
+            I build websites and online stores that look good on phones, help with crypto apps and wallets,
+            and fix computers when they slow down, crash, or won’t start — for people and small businesses.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:kennethpsinclair@yahoo.com?subject=Service%20inquiry">
+              kennethpsinclair@yahoo.com
+            </a>
+            <a class="btn btn-ghost" href="tel:+13157305708">
+              (315) 730-5708
+            </a>
+            <a class="btn btn-ghost" href="#services">
+              See all services →
+            </a>
+          </div>
+          <ul class="trust-row">
+            <li>Custom websites from $500</li>
+            <li>Online stores from $1,200</li>
+            <li>PC diagnosis $49</li>
+            <li>Clear repair estimates</li>
+          </ul>
+        </div>
+        <div class="hero-photo">
+          <img
+            src="/kenneth-sinclair-square.jpg"
+            alt="Kenneth Preston Sinclair"
+            width="440"
+            height="440"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
       </div>
-      <ul class="trust-row">
-        <li>Custom websites from $500</li>
-        <li>Online stores from $1,200</li>
-        <li>PC diagnosis $49</li>
-        <li>Clear repair estimates</li>
-      </ul>
     </section>
 
     <section id="services" class="section">
@@ -509,7 +523,17 @@ import "../styles/global.css";
       <div class="section-head">
         <h2>About</h2>
       </div>
-      <div class="about-card">
+      <div class="about-card about-with-photo">
+        <img
+          class="about-photo"
+          src="/kenneth-sinclair-square.jpg"
+          alt="Kenneth Preston Sinclair"
+          width="160"
+          height="160"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="about-text">
         <p>
           I’m <strong>Kenneth Preston Sinclair</strong> — the person behind <strong>Hatchet Tech</strong>.
           I build <strong>websites and online stores</strong> for real clients,
@@ -526,6 +550,7 @@ import "../styles/global.css";
           <li><strong>Repair</strong> — diagnose, fix, upgrade, and set up PCs</li>
           <li><strong>Code online</strong> — <a href="https://github.com/lucidbrawler" target="_blank" rel="noopener">github.com/lucidbrawler</a></li>
         </ul>
+        </div>
       </div>
     </section>
 
