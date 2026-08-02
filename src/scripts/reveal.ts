@@ -11,19 +11,21 @@ export function initReveal() {
     ".about-card",
     ".edu-card",
     ".hire-card",
+    ".price-card",
+    ".price-table-wrap",
   ];
 
   const nodes = document.querySelectorAll(selectors.join(", "));
   if (!nodes.length) return;
 
   const delayParents = document.querySelectorAll(
-    ".project-grid, .link-grid, .skills-grid, .services-grid"
+    ".project-grid, .link-grid, .skills-grid, .services-grid, .price-grid"
   );
   delayParents.forEach((parent) => {
     [...parent.children].forEach((child, i) => {
       if (
         child instanceof HTMLElement &&
-        child.matches(".project, .link-card, .skill-card, .service-card")
+        child.matches(".project, .link-card, .skill-card, .service-card, .price-card")
       ) {
         child.classList.add("reveal");
         if (i > 0) child.classList.add("delay-" + Math.min(i, 7));
