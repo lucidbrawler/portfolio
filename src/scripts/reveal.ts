@@ -1,0 +1,75 @@
+export function initReveal() {
+  const yearEl = document.getElementById("y");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  const selectors = [
+    ".section-head",
+    ".project",
+    ".link-card",
+    ".skill-card",
+    ".service-card",
+    ".about-card",
+    ".edu-card",
+    ".hire-card",
+  ];
+
+  const nodes = document.querySelectorAll(selectors.join(", "));
+  if (!nodes.length) return;
+
+  const delayParents = document.querySelectorAll(
+    ".project-grid, .link-grid, .skills-grid, .services-grid"
+  );
+  delayParents.forEach((parent) => {
+    [...parent.children].forEach((child, i) => {
+      if (
+        child instanceof HTMLElement &&
+        child.matches(".project, .link-card, .skill-card, .service-card")
+      ) {
+        child.classList.add("reveal");
+        if (i > 0) child.classList.add("delay-" + Math.min(i, 7));
+        if (
+          (child.classList.contains("link-card") ||
+            child.classList.contains("service-card")) &&
+          window.matchMedia("(min-width: 700px)").matches
+        ) {
+          child.classList.add(i % 2 === 0 ? "from-left" : "from-right");
+        }
+      }
+    });
+  });
+
+  nodes.forEach((el) => {
+    if (!el.classList.contains("reveal")) el.classList.add("reveal");
+  });
+
+  document
+    .querySelectorAll(
+      ".project.featured, .section-head, .about-card, .edu-card, .hire-card"
+    )
+    .forEach((el) => el.classList.add("reveal"));
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document
+      .querySelectorAll(".reveal")
+      .forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.12,
+    }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+}

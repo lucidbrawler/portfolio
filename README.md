@@ -1,5 +1,27 @@
 # Portfolio — Kenneth Preston Sinclair (Hatchet Tech)
 
-Static portfolio site: websites, online stores, crypto apps, and computer repair.
+Astro static site for websites, online stores, crypto apps, and computer repair.
 
-Open `index.html` locally, or host the repo root as a static site (GitHub Pages, Netlify, etc.).
+## Develop
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Output: `dist/`
+
+## Netlify
+
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+- **Node:** 22 (see `netlify.toml` / `.nvmrc`)
+
+Connected to this repo, Netlify will pick up `netlify.toml` automatically.
