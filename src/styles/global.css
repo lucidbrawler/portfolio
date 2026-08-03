@@ -5,7 +5,7 @@
   --border: rgba(148, 163, 184, 0.14);
   --text: #e8eef7;
   --muted: #94a3b8;
-  /* Clairforge: emerald craft + cool tech teal */
+  /* Green Anvil: emerald craft + cool tech teal */
   --accent: #2dd4bf;
   --accent-dim: rgba(45, 212, 191, 0.12);
   --accent-2: #5eead4;
@@ -117,9 +117,10 @@ main,
 
 .logo-word {
   font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .logo-word:hover {
