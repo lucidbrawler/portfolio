@@ -248,36 +248,213 @@ main {
   min-width: 0;
 }
 
-.hero .eyebrow {
-  margin-bottom: 0.75rem;
-}
-
 .hero .role {
   margin-top: 0;
   font-size: 1.2rem;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 1rem;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid rgba(45, 212, 191, 0.25);
+/* Abstract modern hero animation (replaces “for hire” badge) */
+.hero-anim {
+  margin: 0 0 1.35rem;
+  max-width: 22rem;
 }
 
-.eyebrow::before {
+.hero-anim-stage {
+  position: relative;
+  width: 100%;
+  height: 72px;
+  border-radius: 18px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 70% 90% at 18% 55%, rgba(45, 212, 191, 0.16), transparent 55%),
+    radial-gradient(ellipse 55% 80% at 82% 40%, rgba(201, 162, 39, 0.1), transparent 50%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(10, 15, 26, 0.75));
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.hero-anim-stage::before {
   content: "";
-  width: 7px;
-  height: 7px;
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+  opacity: 0.55;
+  animation: grid-drift 14s linear infinite;
+  pointer-events: none;
+}
+
+.hero-anim-stage .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0.5px);
+  will-change: transform, opacity;
+}
+
+.hero-anim-stage .orb-a {
+  width: 48px;
+  height: 48px;
+  left: 12%;
+  top: 50%;
+  margin-top: -24px;
+  background: radial-gradient(circle at 35% 35%, #5eead4, #2dd4bf 45%, transparent 70%);
+  opacity: 0.85;
+  animation: orb-float-a 7s ease-in-out infinite;
+  box-shadow: 0 0 28px rgba(45, 212, 191, 0.35);
+}
+
+.hero-anim-stage .orb-b {
+  width: 34px;
+  height: 34px;
+  right: 18%;
+  top: 22%;
+  background: radial-gradient(circle at 40% 35%, #f0d878, #c9a227 50%, transparent 72%);
+  opacity: 0.7;
+  animation: orb-float-b 9s ease-in-out infinite;
+  box-shadow: 0 0 22px rgba(201, 162, 39, 0.28);
+}
+
+.hero-anim-stage .orb-c {
+  width: 22px;
+  height: 22px;
+  left: 48%;
+  bottom: 14%;
+  background: radial-gradient(circle at 40% 35%, #99f6e4, #14b8a6 55%, transparent 75%);
+  opacity: 0.65;
+  animation: orb-float-c 6.5s ease-in-out infinite;
+}
+
+.hero-anim-stage .ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  pointer-events: none;
+}
+
+.hero-anim-stage .ring-a {
+  width: 58px;
+  height: 58px;
+  left: 10%;
+  top: 50%;
+  margin-top: -29px;
+  animation: ring-spin 12s linear infinite;
+  border-color: rgba(45, 212, 191, 0.22);
+  border-top-color: rgba(94, 234, 212, 0.65);
+  border-right-color: transparent;
+}
+
+.hero-anim-stage .ring-b {
+  width: 42px;
+  height: 42px;
+  right: 15%;
+  top: 16%;
+  animation: ring-spin 9s linear infinite reverse;
+  border-color: rgba(201, 162, 39, 0.18);
+  border-bottom-color: rgba(240, 216, 120, 0.55);
+  border-left-color: transparent;
+}
+
+.hero-anim-stage .beam {
+  position: absolute;
+  height: 1px;
+  border-radius: 1px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.hero-anim-stage .beam-a {
+  left: 28%;
+  right: 32%;
+  top: 48%;
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.55), transparent);
+  animation: beam-pulse 4.5s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.hero-anim-stage .beam-b {
+  left: 40%;
+  right: 22%;
+  top: 58%;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.4), transparent);
+  animation: beam-pulse 5.5s ease-in-out infinite 0.8s;
+  transform-origin: right center;
+}
+
+.hero-anim-stage .dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.8);
+  opacity: 0.7;
+}
+
+.hero-anim-stage .d1 { left: 36%; top: 28%; animation: dot-blink 3.2s ease-in-out infinite; }
+.hero-anim-stage .d2 { left: 58%; top: 36%; animation: dot-blink 4.1s ease-in-out infinite 0.4s; background: #c9a227; box-shadow: 0 0 8px rgba(201, 162, 39, 0.7); }
+.hero-anim-stage .d3 { left: 72%; top: 62%; animation: dot-blink 3.6s ease-in-out infinite 1s; }
+.hero-anim-stage .d4 { left: 24%; top: 68%; animation: dot-blink 4.8s ease-in-out infinite 0.6s; }
+.hero-anim-stage .d5 { left: 64%; top: 22%; animation: dot-blink 3.9s ease-in-out infinite 1.4s; }
+
+@keyframes grid-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-18px); }
+}
+
+@keyframes orb-float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(10px, -6px) scale(1.06); }
+  70% { transform: translate(-4px, 5px) scale(0.96); }
+}
+
+@keyframes orb-float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35% { transform: translate(-8px, 7px) scale(1.08); }
+  65% { transform: translate(6px, -4px) scale(0.94); }
+}
+
+@keyframes orb-float-c {
+  0%, 100% { transform: translate(0, 0); opacity: 0.55; }
+  50% { transform: translate(12px, -8px); opacity: 0.9; }
+}
+
+@keyframes ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes beam-pulse {
+  0%, 100% { opacity: 0.25; transform: scaleX(0.75); }
+  50% { opacity: 0.75; transform: scaleX(1); }
+}
+
+@keyframes dot-blink {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim-stage::before,
+  .hero-anim-stage .orb,
+  .hero-anim-stage .ring,
+  .hero-anim-stage .beam,
+  .hero-anim-stage .dot {
+    animation: none !important;
+  }
+
+  .hero-anim-stage .beam {
+    opacity: 0.45;
+    transform: none;
+  }
+
+  .hero-anim-stage .dot {
+    opacity: 0.55;
+  }
 }
 
 h1 {
@@ -937,6 +1114,14 @@ h1 {
 @media (max-width: 520px) {
   .hero {
     padding-top: 2.25rem;
+  }
+
+  .hero-anim {
+    max-width: 100%;
+  }
+
+  .hero-anim-stage {
+    height: 64px;
   }
 
   .logo-mark {
