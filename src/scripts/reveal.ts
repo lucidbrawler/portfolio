@@ -1,12 +1,15 @@
 function initMobileNav() {
   const toggle = document.getElementById("nav-toggle");
   const nav = document.getElementById("site-nav");
+  const headerEnd = document.querySelector(".header-end");
   if (!(toggle instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
 
   const setOpen = (open: boolean) => {
     nav.classList.toggle("is-open", open);
+    headerEnd?.classList.toggle("menu-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.style.overflow = open ? "hidden" : "";
   };
 
   toggle.addEventListener("click", (e) => {
@@ -16,13 +19,6 @@ function initMobileNav() {
 
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => setOpen(false));
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!nav.classList.contains("is-open")) return;
-    const t = e.target;
-    if (t instanceof Node && (nav.contains(t) || toggle.contains(t))) return;
-    setOpen(false);
   });
 
   document.addEventListener("keydown", (e) => {

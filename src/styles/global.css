@@ -85,6 +85,8 @@ main,
   padding: 1.25rem 1.25rem 0;
   gap: 0.75rem;
   min-width: 0;
+  position: relative;
+  z-index: 60;
 }
 
 .logo {
@@ -851,28 +853,52 @@ h1 {
   border-top: 1px solid var(--border);
 }
 
-/* Phone / small tablet: hamburger only; high-contrast dropdown */
+/* Phone / small tablet: solid menu sheet (no glass / no page show-through) */
 @media (max-width: 860px) {
   .nav-toggle {
     display: inline-flex;
+    position: relative;
+    z-index: 60;
+  }
+
+  /* Opaque scrim so page content never shows through */
+  .header-end::before {
+    content: "";
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: #0a0f1a;
+    opacity: 1;
+  }
+
+  .header-end.menu-open::before {
+    display: block;
   }
 
   .nav {
     display: none;
-    position: absolute;
-    top: calc(100% + 0.5rem);
+    position: fixed;
+    top: 0;
     right: 0;
-    z-index: 40;
+    bottom: 0;
+    left: 0;
+    z-index: 55;
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     gap: 0;
-    min-width: min(20rem, 90vw);
-    padding: 0.4rem;
-    border-radius: 16px;
-    /* Light panel + dark type = easy to read on any screen */
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 5.5rem 1.25rem 2rem;
+    border-radius: 0;
+    background: #0a0f1a;
+    border: none;
+    box-shadow: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav.is-open {
@@ -881,15 +907,16 @@ h1 {
 
   .nav a {
     display: block;
-    padding: 1rem 1.15rem;
-    border-radius: 12px;
-    font-size: 1.15rem;
+    padding: 1.1rem 0.25rem;
+    border-radius: 0;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #0f172a !important;
+    color: #f8fafc !important;
     letter-spacing: 0.01em;
     line-height: 1.35;
     text-decoration: none;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(248, 250, 252, 0.12);
+    background: transparent;
   }
 
   .nav a:last-child {
@@ -898,27 +925,27 @@ h1 {
 
   .nav a:not(.nav-cta):hover,
   .nav a:not(.nav-cta):focus-visible {
-    background: #ecfdf5;
-    color: #065f46 !important;
+    background: transparent;
+    color: #5eead4 !important;
   }
 
   .nav a.nav-cta {
-    margin-top: 0.35rem;
+    margin-top: 1.25rem;
     justify-content: center;
     text-align: center;
-    padding: 1.05rem 1.15rem;
+    padding: 1.1rem 1.25rem;
     border-radius: 12px;
     border-bottom: none !important;
     font-size: 1.15rem;
     font-weight: 800;
     color: #042f2e !important;
-    background: #14b8a6 !important;
-    border: 2px solid #0f766e !important;
+    background: #2dd4bf !important;
+    border: none !important;
   }
 
   .nav a.nav-cta:hover {
-    background: #0d9488 !important;
-    color: #ffffff !important;
+    background: #5eead4 !important;
+    color: #042f2e !important;
   }
 }
 
