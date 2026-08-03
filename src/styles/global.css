@@ -922,36 +922,10 @@ h1 {
     background: transparent;
   }
 
-  .nav a:not(.nav-cta):hover,
-  .nav a:not(.nav-cta):focus-visible {
+  .nav a:hover,
+  .nav a:focus-visible {
     background: transparent;
     color: #5eead4 !important;
-  }
-
-  /* Last item in the list — smaller pill, still in normal flow */
-  .nav a.nav-cta {
-    width: fit-content;
-    max-width: 100%;
-    margin: 1.25rem auto 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.7rem 1.5rem;
-    border-radius: 999px;
-    border-bottom: none !important;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-align: center;
-    color: #042f2e !important;
-    background: #2dd4bf !important;
-    border: none !important;
-    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.2);
-  }
-
-  .nav a.nav-cta:hover {
-    background: #5eead4 !important;
-    color: #042f2e !important;
   }
 }
 
