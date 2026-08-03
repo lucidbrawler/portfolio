@@ -11,16 +11,29 @@ import "../styles/global.css";
       <img src="/green-anvil-mark.png" alt="" width="52" height="52" class="logo-mark" />
       <span class="logo-word">Green Anvil</span>
     </a>
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#web">Web</a>
-      <a href="#work">Crypto</a>
-      <a href="#repair">Repair</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a href="https://github.com/lucidbrawler" target="_blank" rel="noopener">GitHub</a>
+    <div class="header-end">
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#web">Web</a>
+        <a href="#work">Crypto</a>
+        <a href="#repair">Repair</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/lucidbrawler" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
       <a href="#hire" class="nav-cta">Hire me</a>
-    </nav>
+    </div>
   </header>
 
   <main id="top">

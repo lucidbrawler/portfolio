@@ -1,6 +1,44 @@
+function initMobileNav() {
+  const toggle = document.getElementById("nav-toggle");
+  const nav = document.getElementById("site-nav");
+  if (!(toggle instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
+
+  const setOpen = (open: boolean) => {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(!nav.classList.contains("is-open"));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!nav.classList.contains("is-open")) return;
+    const t = e.target;
+    if (t instanceof Node && (nav.contains(t) || toggle.contains(t))) return;
+    setOpen(false);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 861px)").matches) setOpen(false);
+  });
+}
+
 export function initReveal() {
   const yearEl = document.getElementById("y");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  initMobileNav();
 
   const selectors = [
     ".section-head",

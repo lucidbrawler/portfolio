@@ -128,6 +128,14 @@ main,
   color: var(--accent);
 }
 
+.header-end {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  position: relative;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -148,12 +156,77 @@ main,
   color: var(--text);
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nav-toggle:hover {
+  border-color: rgba(45, 212, 191, 0.35);
+  color: var(--accent);
+}
+
+.nav-toggle-bars {
+  display: block;
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  position: relative;
+  box-shadow: 0 -4px 0 currentColor, 0 4px 0 currentColor;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars {
+  background: transparent;
+  box-shadow: none;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before,
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+  transform: rotate(-45deg);
+}
+
 .nav-cta {
+  display: inline-flex;
+  align-items: center;
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
   background: var(--accent-dim);
   color: var(--accent) !important;
   border: 1px solid rgba(45, 212, 191, 0.3);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -779,11 +852,46 @@ h1 {
   border-top: 1px solid var(--border);
 }
 
-@media (max-width: 520px) {
-  .nav a:not(.nav-cta) {
-    display: none;
+/* Phone / small tablet: Menu button next to Hire me */
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex;
   }
 
+  .nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 0;
+    z-index: 40;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+    min-width: min(16.5rem, 78vw);
+    padding: 0.5rem;
+    border-radius: 14px;
+    background: rgba(17, 24, 39, 0.98);
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 0.7rem 0.85rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+  }
+
+  .nav a:hover {
+    background: rgba(45, 212, 191, 0.1);
+    color: var(--accent);
+  }
+}
+
+@media (max-width: 520px) {
   .hero {
     padding-top: 2.25rem;
   }
