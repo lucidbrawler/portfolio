@@ -159,33 +159,32 @@ main,
 .nav-toggle {
   display: none;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
   margin: 0;
-  padding: 0.42rem 0.7rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
   background: var(--bg-elevated);
-  color: var(--text);
-  font: inherit;
-  font-size: 0.88rem;
-  font-weight: 600;
+  color: #e8eef7;
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .nav-toggle:hover {
-  border-color: rgba(45, 212, 191, 0.35);
+  border-color: rgba(45, 212, 191, 0.45);
   color: var(--accent);
 }
 
 .nav-toggle-bars {
   display: block;
-  width: 14px;
+  width: 18px;
   height: 2px;
   border-radius: 1px;
   background: currentColor;
   position: relative;
-  box-shadow: 0 -4px 0 currentColor, 0 4px 0 currentColor;
+  box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
   transition: background 0.15s, box-shadow 0.15s;
 }
 
@@ -852,7 +851,7 @@ h1 {
   border-top: 1px solid var(--border);
 }
 
-/* Phone / small tablet: Menu button next to Hire me */
+/* Phone / small tablet: hamburger only; links + Hire me in panel */
 @media (max-width: 860px) {
   .nav-toggle {
     display: inline-flex;
@@ -861,18 +860,18 @@ h1 {
   .nav {
     display: none;
     position: absolute;
-    top: calc(100% + 0.45rem);
+    top: calc(100% + 0.5rem);
     right: 0;
     z-index: 40;
     flex-direction: column;
     align-items: stretch;
-    gap: 0.15rem;
-    min-width: min(16.5rem, 78vw);
-    padding: 0.5rem;
+    gap: 0.2rem;
+    min-width: min(18rem, 86vw);
+    padding: 0.65rem;
     border-radius: 14px;
-    background: rgba(17, 24, 39, 0.98);
-    border: 1px solid var(--border);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    background: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55);
   }
 
   .nav.is-open {
@@ -880,14 +879,36 @@ h1 {
   }
 
   .nav a {
-    padding: 0.7rem 0.85rem;
+    padding: 0.85rem 1rem;
     border-radius: 10px;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
   }
 
-  .nav a:hover {
-    background: rgba(45, 212, 191, 0.1);
-    color: var(--accent);
+  .nav a:hover,
+  .nav a:focus-visible {
+    background: rgba(45, 212, 191, 0.14);
+    color: #5eead4;
+  }
+
+  .nav a.nav-cta {
+    margin-top: 0.35rem;
+    justify-content: center;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #042f2e !important;
+    background: #2dd4bf !important;
+    border: 1px solid #5eead4;
+  }
+
+  .nav a.nav-cta:hover {
+    background: #5eead4 !important;
+    color: #042f2e !important;
   }
 }
 
