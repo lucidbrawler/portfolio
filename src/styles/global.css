@@ -146,14 +146,6 @@ main,
   justify-content: flex-end;
 }
 
-.nav-links {
-  display: contents;
-}
-
-.nav-footer {
-  display: contents;
-}
-
 .nav a {
   color: var(--muted);
   text-decoration: none;
@@ -895,11 +887,11 @@ h1 {
     gap: 0;
     width: 100vw;
     max-width: 100vw;
-    height: 100%;
-    height: 100dvh;
+    min-height: 100%;
+    min-height: 100dvh;
     min-width: 0;
     margin: 0;
-    padding: 5.5rem 1.25rem 1.75rem;
+    padding: 5.5rem 1.25rem 2rem;
     border-radius: 0;
     background: #0a0f1a;
     border: none;
@@ -912,26 +904,6 @@ h1 {
 
   .nav.is-open {
     display: flex;
-  }
-
-  /* Links list takes remaining space; CTA footer stays bottom-center */
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex: 1 1 auto;
-    min-height: 0;
-    width: 100%;
-  }
-
-  .nav-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 auto;
-    width: 100%;
-    margin-top: auto;
-    padding-top: 1.5rem;
   }
 
   .nav a {
@@ -950,25 +922,21 @@ h1 {
     background: transparent;
   }
 
-  .nav-links a:last-child {
-    border-bottom: 1px solid rgba(248, 250, 252, 0.12);
-  }
-
   .nav a:not(.nav-cta):hover,
   .nav a:not(.nav-cta):focus-visible {
     background: transparent;
     color: #5eead4 !important;
   }
 
+  /* Last item in the list — smaller pill, still in normal flow */
   .nav a.nav-cta {
-    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    margin: 1.25rem auto 0;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    min-width: 10.5rem;
-    max-width: 16rem;
-    margin: 0;
-    padding: 0.7rem 1.6rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 999px;
     border-bottom: none !important;
     font-size: 0.95rem;
@@ -979,7 +947,6 @@ h1 {
     background: #2dd4bf !important;
     border: none !important;
     box-shadow: 0 8px 20px rgba(45, 212, 191, 0.2);
-    flex-shrink: 0;
   }
 
   .nav a.nav-cta:hover {
