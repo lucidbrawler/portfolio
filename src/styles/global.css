@@ -5,9 +5,12 @@
   --border: rgba(148, 163, 184, 0.14);
   --text: #e8eef7;
   --muted: #94a3b8;
+  /* Clairforge: emerald craft + cool tech teal */
   --accent: #2dd4bf;
   --accent-dim: rgba(45, 212, 191, 0.12);
-  --accent-2: #60a5fa;
+  --accent-2: #5eead4;
+  --brand-green: #0d6b45;
+  --brand-gold: #c9a227;
   --radius: 16px;
   --font: "DM Sans", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -85,18 +88,42 @@ main,
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(45, 212, 191, 0.35);
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   text-decoration: none;
+  color: var(--text);
+  min-width: 0;
+}
+
+.logo.brand-logo {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  border-radius: 0;
+  place-items: unset;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  box-shadow: 0 0 0 3px rgba(13, 107, 69, 0.15);
+  flex-shrink: 0;
+}
+
+.logo-word {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.logo-word:hover {
+  color: var(--accent);
 }
 
 .nav {
@@ -141,44 +168,29 @@ main {
   padding: 3.5rem 0 2.5rem;
 }
 
-.hero-layout {
+.hero-brand-lockup {
   display: flex;
-  align-items: center;
-  gap: 2rem 2.5rem;
+  align-items: flex-start;
+  gap: 1.5rem 2rem;
   flex-wrap: wrap;
+}
+
+.brand-hero-mark {
+  flex: 0 0 auto;
+  width: 112px;
+  height: 112px;
+  border-radius: 24px;
+  object-fit: cover;
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  box-shadow:
+    0 0 0 6px rgba(13, 107, 69, 0.12),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+  background: #121212;
 }
 
 .hero-copy {
   flex: 1 1 16rem;
   min-width: 0;
-}
-
-.hero-photo {
-  flex: 0 0 168px;
-  width: 168px;
-  height: 168px;
-  margin-left: auto;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(45, 212, 191, 0.45);
-  box-shadow:
-    0 0 0 6px rgba(45, 212, 191, 0.1),
-    0 18px 40px rgba(0, 0, 0, 0.35);
-  background: var(--bg-elevated);
-  /* lock perfect circle — never stretch into an oval */
-  aspect-ratio: 1 / 1;
-  max-width: 168px;
-  max-height: 168px;
-}
-
-.hero-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 0;
 }
 
 .eyebrow {
@@ -618,34 +630,6 @@ h1 {
   background: var(--card);
 }
 
-.about-with-photo {
-  display: flex;
-  gap: 1.25rem 1.5rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.about-photo {
-  flex: 0 0 96px;
-  width: 96px;
-  height: 96px;
-  max-width: 96px;
-  max-height: 96px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center center;
-  border: 2px solid rgba(45, 212, 191, 0.4);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  background: var(--bg-elevated);
-  overflow: hidden;
-}
-
-.about-text {
-  flex: 1 1 14rem;
-  min-width: 0;
-}
-
 .about-card p {
   margin: 0 0 0.9rem;
   color: var(--muted);
@@ -814,19 +798,20 @@ h1 {
     padding-top: 2.25rem;
   }
 
-  .hero-layout {
-    flex-direction: column-reverse;
+  .hero-brand-lockup {
+    flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
-  .hero-photo {
-    flex: 0 0 128px;
-    width: 128px;
-    height: 128px;
-    max-width: 128px;
-    max-height: 128px;
-    margin-left: 0;
+  .brand-hero-mark {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+  }
+
+  .logo-word {
+    font-size: 0.95rem;
   }
 
   .hero-actions {

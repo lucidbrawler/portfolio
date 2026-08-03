@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" role="img" aria-label="Clairforge">
+  <title>Clairforge</title>
+  <!-- Mark: C + anvil (simplified) -->
+  <g transform="translate(8,10)">
+    <rect width="100" height="100" rx="22" fill="#0f1a14"/>
+    <!-- C arc -->
+    <path d="M72 28c-18-10-42-6-52 12-10 18-4 42 14 52 12 7 28 8 40 2"
+          fill="none" stroke="#0d6b45" stroke-width="14" stroke-linecap="round"/>
+    <path d="M72 28c-18-10-42-6-52 12-10 18-4 42 14 52 12 7 28 8 40 2"
+          fill="none" stroke="#c9a227" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+    <!-- Anvil body -->
+    <path d="M28 52h48l6 8v10c0 6-5 12-12 12H36c-7 0-12-6-12-12V60l4-8z" fill="#0d6b45" stroke="#c9a227" stroke-width="2"/>
+    <path d="M22 52h18l-8-10H30l-8 10z" fill="#0d6b45" stroke="#c9a227" stroke-width="2"/>
+    <!-- Tiny knot -->
+    <circle cx="66" cy="68" r="3.5" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <path d="M64 68h4M66 66v4" stroke="#c9a227" stroke-width="1"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="128" y="72"
+        font-family="DM Sans, system-ui, sans-serif"
+        font-size="42"
+        font-weight="700"
+        letter-spacing="0.04em"
+        fill="#e8eef7">CLAIRFORGE</text>
+  <text x="130" y="96"
+        font-family="DM Sans, system-ui, sans-serif"
+        font-size="12"
+        font-weight="500"
+        letter-spacing="0.28em"
+        fill="#94a3b8">CRAFT · CODE · CLEAR WORK</text>
+</svg>

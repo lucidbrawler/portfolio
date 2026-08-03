@@ -7,7 +7,10 @@ import "../styles/global.css";
 
 
   <header class="site-header">
-    <a class="logo" href="#top">KS</a>
+    <a class="logo brand-logo" href="#top" aria-label="Clairforge home">
+      <img src="/clairforge-mark.png" alt="" width="36" height="36" class="logo-mark" />
+      <span class="logo-word">Clairforge</span>
+    </a>
     <nav class="nav">
       <a href="#services">Services</a>
       <a href="#web">Web</a>
@@ -22,14 +25,24 @@ import "../styles/global.css";
 
   <main id="top">
     <section class="hero">
-      <div class="hero-layout">
+      <div class="hero-brand-lockup">
+        <img
+          src="/clairforge-mark.png"
+          alt="Clairforge mark — anvil and C monogram"
+          width="120"
+          height="120"
+          class="brand-hero-mark"
+          loading="eager"
+          decoding="async"
+        />
         <div class="hero-copy">
-          <p class="eyebrow">Hatchet Tech · available for hire</p>
-          <h1>Kenneth Preston Sinclair</h1>
+          <p class="eyebrow">Clairforge · available for hire</p>
+          <h1>Clairforge</h1>
           <p class="role">Websites · Online stores · Crypto apps · Computer repair</p>
           <p class="lede">
-            I build websites and online stores that look good on phones, help with crypto apps and wallets,
-            and fix computers when they slow down, crash, or won’t start — for people and small businesses.
+            Kenneth Preston Sinclair builds websites and online stores that look good on phones,
+            helps with crypto apps and wallets, and fixes computers when they slow down, crash,
+            or won’t start — for people and small businesses.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="mailto:kennethpsinclair@yahoo.com?subject=Service%20inquiry">
@@ -48,16 +61,6 @@ import "../styles/global.css";
             <li>PC diagnosis $49</li>
             <li>Clear repair estimates</li>
           </ul>
-        </div>
-        <div class="hero-photo">
-          <img
-            src="/kenneth-sinclair-square.jpg"
-            alt="Kenneth Preston Sinclair"
-            width="168"
-            height="168"
-            loading="eager"
-            decoding="async"
-          />
         </div>
       </div>
     </section>
@@ -523,19 +526,9 @@ import "../styles/global.css";
       <div class="section-head">
         <h2>About</h2>
       </div>
-      <div class="about-card about-with-photo">
-        <img
-          class="about-photo"
-          src="/kenneth-sinclair-square.jpg"
-          alt="Kenneth Preston Sinclair"
-          width="96"
-          height="96"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="about-text">
+      <div class="about-card">
         <p>
-          I’m <strong>Kenneth Preston Sinclair</strong> — the person behind <strong>Hatchet Tech</strong>.
+          I’m <strong>Kenneth Preston Sinclair</strong> — founder of <strong>Clairforge</strong>.
           I build <strong>websites and online stores</strong> for real clients,
           work on <strong>crypto wallets and apps</strong>, and do
           <strong>computer repair and setup</strong> when the machine is the problem.
@@ -550,7 +543,6 @@ import "../styles/global.css";
           <li><strong>Repair</strong> — diagnose, fix, upgrade, and set up PCs</li>
           <li><strong>Code online</strong> — <a href="https://github.com/lucidbrawler" target="_blank" rel="noopener">github.com/lucidbrawler</a></li>
         </ul>
-        </div>
       </div>
     </section>
 
@@ -611,7 +603,7 @@ import "../styles/global.css";
   </main>
 
   <footer class="site-footer">
-    <span>© <span id="y"></span> Kenneth Preston Sinclair · Hatchet Tech</span>
+    <span>© <span id="y"></span> Kenneth Preston Sinclair · Clairforge</span>
     <a class="mono footer-link" href="https://github.com/lucidbrawler" target="_blank" rel="noopener">github.com/lucidbrawler</a>
   </footer>
 
