@@ -892,7 +892,7 @@ h1 {
     min-width: 0;
     max-width: none;
     margin: 0;
-    padding: 5.5rem 1.25rem 2rem;
+    padding: 5.5rem 1.25rem 1.5rem;
     border-radius: 0;
     background: #0a0f1a;
     border: none;
@@ -919,8 +919,8 @@ h1 {
     background: transparent;
   }
 
-  .nav a:last-child {
-    border-bottom: none;
+  .nav a:not(.nav-cta):last-of-type {
+    border-bottom: 1px solid rgba(248, 250, 252, 0.12);
   }
 
   .nav a:not(.nav-cta):hover,
@@ -929,18 +929,25 @@ h1 {
     color: #5eead4 !important;
   }
 
+  /* Pin Hire me to the bottom of the sheet */
   .nav a.nav-cta {
-    margin-top: 1.25rem;
+    margin-top: auto;
+    align-self: center;
+    width: min(100%, 16rem);
+    display: inline-flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 1.1rem 1.25rem;
-    border-radius: 12px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 999px;
     border-bottom: none !important;
-    font-size: 1.15rem;
-    font-weight: 800;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     color: #042f2e !important;
     background: #2dd4bf !important;
     border: none !important;
+    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.2);
   }
 
   .nav a.nav-cta:hover {
